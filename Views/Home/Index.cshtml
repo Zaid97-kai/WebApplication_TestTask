@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <p>
+            <label>Входные данные:</label>
+            @Html.TextArea("InputData", "3\n\n3\n2 2\n4 6\n100 6\n\n3\n3 3\n6 6\n8 10\n\n2\n2 2\n5 5", 15, 30, null)
+        </p>
+        <p>
+            <input type="submit" value="Вычислить" />
+        </p>
+        <p>
+            <label class="MessageBoxClass">@ViewBag.MessageBox</label>
+        </p>
+        <p>
+            <p>Выходные данные:</p>
+            @if (@ViewBag.Out != null)
+            {
+                @foreach (var item in @ViewBag.Out)
+                {
+                    <p>@item</p>
+                }
+            }
+    </form>
+</div>
